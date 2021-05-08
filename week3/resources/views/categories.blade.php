@@ -401,7 +401,7 @@
 <body>
 
     <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom box-shadow">
-        <h5 class="my-0 mr-md-auto font-weight-normal">Trainer</h5>
+        <h5 class="my-0 mr-md-auto font-weight-normal">Category</h5>
         <nav class="my-2 my-md-0 mr-md-3">
             <a class="p-2 text-dark" href="/companies">Companies</a>
             <a class="p-2 text-dark" href="/trainers">Trainers</a>
@@ -413,50 +413,30 @@
     </div>
 
     <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
-        <h1 class="display-4">Search</h1>
-        {{-- <p class="lead">List Trainers</p> --}}
+        <h1 class="display-4">Categories</h1>
+        <p class="lead">List Categories</p>
     </div>
 
     <div class="container">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">category_id</th>
+                    <th scope="col">category_name</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach($categories as $category)
+                <tr>
+                    <td>{!! $category->category_id !!}</td>
+                    <td>{!! $category->category_name !!}</td>
+                </tr>
+                @endforeach
+            </tbody>
+        </table>
         <div class="d-flex justify-content-center">
-            <form class="form-inline mt-2 mt-md-0" action="/search" method="GET">
-                <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" name="searchinput">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-            </form>
-            
+            {{ $categories->onEachSide(5)->links() }}
         </div>
-        <?php
-        if (isset($search)) { ?>
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th scope="col">trainer_id</th>
-                        <th scope="col">trainer_name</th>
-                        <th scope="col">trainer_email</th>
-                        <th scope="col">trainer_phone</th>
-                        <th scope="col">company_id</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach($trainers as $trainer)
-                    <tr>
-                        <td>{!! $trainer->trainer_id !!}</td>
-                        <td>{!! $trainer->trainer_name !!}</td>
-                        <td>{!! $trainer->trainer_email !!}</td>
-                        <td>{!! $trainer->trainer_phone !!}</td>
-                        <td>{!! $trainer->company_id !!}</td>
-                    </tr>
-                    @endforeach
-                </tbody>
-            </table>
-            <div class="d-flex justify-content-center">
-            {{ $trainers->withQueryString()->links() }}
-            </div>
-        <?php } else {
-            echo "products not set";
-        }
-        ?>
-        
         <footer class="pt-4 my-md-5 pt-md-5 border-top">
             <div class="row">
                 <div class="col-12 col-md">

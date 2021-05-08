@@ -19,6 +19,7 @@ class SearchController extends Controller
             ->paginate(10);
            
         // Return the search view with the resluts compacted
-        return view('search', ['trainers' => $trainers, 'search'=>$search]);
+        return view('search', ['trainers' => $trainers, 'search' => $search]);
     }
+
 }
