@@ -14,7 +14,7 @@ class CompaniesSeeder extends Seeder {
      * @return void
      */
     public function run() {
-        for ($i = 0; $i < 100; $i++) {
+        for ($i = 0; $i < 10; $i++) {
             DB::table('companies')->insert([
                 'company_name' => Str::random(10),
                 'company_web' => Str::random(10),

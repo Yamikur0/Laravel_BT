@@ -426,6 +426,7 @@
       <th scope="col">trainer_email</th>
       <th scope="col">trainer_phone</th>
       <th scope="col">company_id</th>
+      <th scope="col">company_name</th>
     </tr>
   </thead>
   <tbody>
@@ -436,6 +437,7 @@
       <td>{!! $trainer->trainer_email !!}</td>
       <td>{!! $trainer->trainer_phone !!}</td>
       <td>{!! $trainer->company_id !!}</td>
+      <td>{!! $trainer->company['company_name'] !!}</td>
     </tr>
     @endforeach    
   </tbody>
