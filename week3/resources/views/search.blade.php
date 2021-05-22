@@ -405,7 +405,6 @@
         <nav class="my-2 my-md-0 mr-md-3">
             <a class="p-2 text-dark" href="/companies">Companies</a>
             <a class="p-2 text-dark" href="/trainers">Trainers</a>
-            <a class="p-2 text-dark" href="/categories">Categories</a>
             <a class="p-2 text-dark" href="/search">Search</a>
 
         </nav>
@@ -423,7 +422,6 @@
                 <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" name="searchinput">
                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
             </form>
-            
         </div>
         <?php
         if (isset($search)) { ?>
