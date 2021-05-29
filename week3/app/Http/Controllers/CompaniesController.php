@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Companies;
+use App\Models\Trainers;
 
 class CompaniesController extends Controller
 {
@@ -11,4 +12,5 @@ class CompaniesController extends Controller
         $companies = $obj->paginate(10);
         return view('companies', ['companies' => $companies]);
     }
+
 }

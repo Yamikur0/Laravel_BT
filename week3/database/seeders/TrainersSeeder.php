@@ -15,7 +15,7 @@ class TrainersSeeder extends Seeder {
      * @return void
      */
     public function run() {
-        for ($i = 0; $i < 100; $i++) {
+        for ($i = 0; $i < 10; $i++) {
             DB::table('trainers')->insert([
                 'trainer_name' => Str::random(10),
                 'trainer_email' => Str::random(10),

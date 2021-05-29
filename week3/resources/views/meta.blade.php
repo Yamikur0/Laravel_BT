@@ -1,18 +1,9 @@
-@extends('layout')
-@section('content')
-<!-- <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Laravel</title>
-
-    
+    <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    
+    <!-- Styles -->
     <style>
         /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
         html {
@@ -398,119 +389,4 @@
             font-family: 'Nunito', sans-serif;
         }
     </style>
-</head>
 
-<body> -->
-
-    <!-- <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom box-shadow">
-        <h5 class="my-0 mr-md-auto font-weight-normal">Trainer</h5>
-        <nav class="my-2 my-md-0 mr-md-3">
-            <a class="p-2 text-dark" href="/companies">Companies</a>
-            <a class="p-2 text-dark" href="/trainers">Trainers</a>
-            <a class="p-2 text-dark" href="/categories">Categories</a>
-            <a class="p-2 text-dark" href="/search">Search</a>
-
-        </nav>
-
-    </div> -->
-
-    <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
-        <h1 class="display-4">Trainers</h1>
-        <p class="lead">List Trainers</p>
-    </div>
-
-    <div class="container">
-        <table class="table">
-            <thead>
-                <tr>
-                    <th scope="col">trainer_id</th>
-                    <th scope="col">trainer_name</th>
-                    <th scope="col">trainer_email</th>
-                    <th scope="col">trainer_phone</th>
-                    <th scope="col">company_id</th>
-                    <th scope="col">company_name</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach($trainers as $trainer)
-                <tr>
-                    <td>{!! $trainer->trainer_id !!}</td>
-                    <td>{!! $trainer->trainer_name !!}</td>
-                    <td>{!! $trainer->trainer_email !!}</td>
-                    <td>{!! $trainer->trainer_phone !!}</td>
-                    <td>{!! $trainer->company_id !!}</td>
-                    <td>{!! $trainer->company['company_name'] !!}</td>
-                </tr>
-                @endforeach
-            </tbody>
-        </table>
-        <div class="d-flex justify-content-center">
-            {{ $trainers->onEachSide(5)->links() }}
-        </div>
-        <!-- <footer class="pt-4 my-md-5 pt-md-5 border-top">
-            <div class="row">
-                <div class="col-12 col-md">
-                    <img class="mb-2" src="https://getbootstrap.com/docs/4.0/assets/brand/bootstrap-solid.svg" alt="" width="24" height="24">
-                    <small class="d-block mb-3 text-muted">© 2017-2018</small>
-                </div>
-                <div class="col-6 col-md">
-                    <h5>Features</h5>
-                    <ul class="list-unstyled text-small">
-                        <li><a class="text-muted" href="#">Cool stuff</a></li>
-                        <li><a class="text-muted" href="#">Random feature</a></li>
-                        <li><a class="text-muted" href="#">Team feature</a></li>
-                        <li><a class="text-muted" href="#">Stuff for developers</a></li>
-                        <li><a class="text-muted" href="#">Another one</a></li>
-                        <li><a class="text-muted" href="#">Last time</a></li>
-                    </ul>
-                </div>
-                <div class="col-6 col-md">
-                    <h5>Resources</h5>
-                    <ul class="list-unstyled text-small">
-                        <li><a class="text-muted" href="#">Resource</a></li>
-                        <li><a class="text-muted" href="#">Resource name</a></li>
-                        <li><a class="text-muted" href="#">Another resource</a></li>
-                        <li><a class="text-muted" href="#">Final resource</a></li>
-                    </ul>
-                </div>
-                <div class="col-6 col-md">
-                    <h5>About</h5>
-                    <ul class="list-unstyled text-small">
-                        <li><a class="text-muted" href="#">Team</a></li>
-                        <li><a class="text-muted" href="#">Locations</a></li>
-                        <li><a class="text-muted" href="#">Privacy</a></li>
-                        <li><a class="text-muted" href="#">Terms</a></li>
-                    </ul>
-                </div>
-            </div>
-        </footer> -->
-    </div>
-    @endsection
-
-
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script>
-        window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')
-    </script>
-    <script src="../../assets/js/vendor/popper.min.js"></script>
-    <script src="../../dist/js/bootstrap.min.js"></script>
-    <script src="../../assets/js/vendor/holder.min.js"></script>
-    <script>
-        Holder.addTheme('thumb', {
-            bg: '#55595c',
-            fg: '#eceeef',
-            text: 'Thumbnail'
-        });
-    </script>
-
-
-
-
-
-    <iframe style="position: absolute; width: 1px; height: 1px; left: -9999px;" src="https://www.ciuvo.com/ciuvo/globalstorage?version=2.1.3"></iframe>
-</body>
-
-</html>
