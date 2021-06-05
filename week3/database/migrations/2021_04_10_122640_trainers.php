@@ -19,6 +19,9 @@ class Trainers extends Migration
             $table->string('trainer_email', 55);
             $table->string('trainer_phone', 55);
             $table->integer('company_id', false, 11);
+            $table->integer('status', false, 11)->nullable();
+            $table->softDeletes();
+            $table->timestamps();
         });
     }
 

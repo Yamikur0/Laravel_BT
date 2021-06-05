@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class Categories extends Migration
+class UsersHasGroups extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,9 @@ class Categories extends Migration
      */
     public function up()
     {
-        Schema::create('categories', function (Blueprint $table) {
-            $table->integer('category_id', $autoIncrement = true);
-            $table->string('category_name', 55);
+        Schema::create('users_has_groups', function (Blueprint $table) {
+            $table->integer('user_id', false, 11);
+            $table->integer('group_id', false, 11);
             $table->integer('status', false, 11)->nullable();
             $table->softDeletes();
             $table->timestamps();
@@ -29,6 +29,6 @@ class Categories extends Migration
      */
     public function down()
     {
-        Schema::drop('categories');
+        Schema::drop('users_has_groups');
     }
 }

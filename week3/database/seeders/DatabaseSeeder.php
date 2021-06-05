@@ -16,6 +16,10 @@ class DatabaseSeeder extends Seeder {
             CompaniesSeeder::class,
             TrainersSeeder::class,
             CategoriesSeeder::class,
+            ClassesSeeder::class,
+            StudentsSeeder::class,
+            TeachersSeeder::class,
+            UsersHasGroupsSeeder::class,
         ]);
     }
 

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class Categories extends Migration
+class Students extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,12 @@ class Categories extends Migration
      */
     public function up()
     {
-        Schema::create('categories', function (Blueprint $table) {
-            $table->integer('category_id', $autoIncrement = true);
-            $table->string('category_name', 55);
+        Schema::create('students', function (Blueprint $table) {
+            $table->integer('student_id', $autoIncrement = true);
+            $table->integer('company_id', false, 11);
+            $table->integer('class_id', false, 11);
+            $table->integer('user_id', false, 11);
+            $table->integer('faculties_id', false, 11);
             $table->integer('status', false, 11)->nullable();
             $table->softDeletes();
             $table->timestamps();
@@ -29,6 +32,6 @@ class Categories extends Migration
      */
     public function down()
     {
-        Schema::drop('categories');
+        Schema::drop('students');
     }
 }
