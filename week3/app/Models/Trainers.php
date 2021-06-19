@@ -9,9 +9,4 @@ class Trainers extends Model
 {
     use SoftDeletes;
     protected $table = 'trainers';
-
-    public function company()
-    {
-        return $this->hasOne('App\Models\Companies', 'company_id', 'company_id');
-    }
 }

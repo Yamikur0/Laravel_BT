@@ -8,10 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Companies extends Model
 {
     use SoftDeletes;
-    protected $table = 'companies';
+    protected $table = 'Companies';
 
-    public function trainer()
-    {
-        return $this->hasOne('App\Models\Trainers', 'company_id', 'company_id');
-    }
 }
+
