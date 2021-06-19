@@ -10,7 +10,8 @@ use Illuminate\Notifications\Notifiable;
 class User extends Authenticatable
 {
     use HasFactory, Notifiable;
-    protected $table = "users";
+    // protected $table = "users";
+    protected $primaryKey = 'user_id';
 
     /**
      * The attributes that are mass assignable.
@@ -33,6 +34,11 @@ class User extends Authenticatable
         'remember_token',
     ];
 
+    /**
+     * Get password for the user
+     *
+     * @return string
+     */
     public function getAuthPassword()
     {
         return $this->user_password;
